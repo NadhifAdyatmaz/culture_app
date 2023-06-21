@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../services/firebase_sign_in.dart';
 import 'main_page.dart';
 import 'register.dart';
 
@@ -18,9 +19,9 @@ class _LoginState extends State<Login> {
       body: Center(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          color: Color(0xffffffff),
+          color: const Color(0xffffffff),
           child: Container(
-            margin: EdgeInsets.only(top: 60),
+            margin: const EdgeInsets.only(top: 60),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -35,8 +36,8 @@ class _LoginState extends State<Login> {
                 Column(
                   children: <Widget>[
                     Container(
-                      child: Image(
-                        image: AssetImage("images/reg-1.png"),
+                      child: const Image(
+                        image: AssetImage("assets/images/reg-1.png"),
                         height: 300,
                       ),
                     ),
@@ -45,7 +46,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                              margin: EdgeInsets.only(bottom: 10),
+                              margin: const EdgeInsets.only(bottom: 10),
                               child: fieldMasuk("Username")),
                           fieldMasuk("Password"),
                         ],
@@ -54,16 +55,16 @@ class _LoginState extends State<Login> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 30),
+                  margin: const EdgeInsets.only(bottom: 20),
                   width: MediaQuery.of(context).size.width * 0.73,
                   child: Column(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(bottom: 25),
+                        margin: const EdgeInsets.only(bottom: 25),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text(
+                            const Text(
                               "Belum Memiliki Akun? ",
                               style: TextStyle(fontSize: 18),
                             ),
@@ -71,10 +72,10 @@ class _LoginState extends State<Login> {
                               onTap: () {
                                 Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder: (context) {
-                                  return Register();
+                                  return const Register();
                                 }));
                               },
-                              child: Text(
+                              child: const Text(
                                 "Daftar!",
                                 style: TextStyle(
                                     fontSize: 18, color: Color(0xff52FF00)),
@@ -87,11 +88,11 @@ class _LoginState extends State<Login> {
                         borderRadius: BorderRadius.circular(25),
                         elevation: 3,
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.6,
-                          height: 70,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              color: Color(0xff52FF00)),
+                              color: const Color(0xff52FF00)),
                           child: Material(
                             borderRadius: BorderRadius.circular(25),
                             color: Colors.transparent,
@@ -106,7 +107,7 @@ class _LoginState extends State<Login> {
                                 child: Text(
                                   "Masuk",
                                   style: TextStyle(
-                                      fontSize: 32,
+                                      fontSize: 25,
                                       fontWeight: FontWeight.w700,
                                       color: Color(0xffffffff),
                                       shadows: <Shadow>[
@@ -121,6 +122,19 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const Text(
+                              "Atau",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                      _signInButton()
                     ],
                   ),
                 )
@@ -135,7 +149,39 @@ class _LoginState extends State<Login> {
   TextField fieldMasuk(String label) {
     return TextField(
       decoration: InputDecoration(
-          labelText: label, labelStyle: TextStyle(color: Color(0xff82916A))),
+          labelText: label,
+          labelStyle: const TextStyle(color: Color(0xff82916A))),
+    );
+  }
+
+  Widget _signInButton() {
+    return OutlinedButton(
+      onPressed: () {
+        signInWithGoogle().then((result) {
+          if (result != null) {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const MainPage();
+            }));
+          }
+        });
+      },
+      style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.all<Color>(Color.fromRGBO(255, 255, 255, 0)),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Image.asset(
+          'assets/images/google.png',
+          height: 25,
+          width: MediaQuery.of(context).size.width * 0.1,
+        ),
+      ),
     );
   }
 }

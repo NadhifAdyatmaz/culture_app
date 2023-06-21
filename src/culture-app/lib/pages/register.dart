@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../services/firebase_sign_in.dart';
 import 'login.dart';
 import 'main_page.dart';
 
@@ -54,7 +55,8 @@ class _RegisterState extends State<Register> {
                     children: <Widget>[
                       Container(
                         alignment: Alignment.center,
-                        child: Image(image: AssetImage("images/req.png")),
+                        child:
+                            Image(image: AssetImage("assets/images/req.png")),
                         height: 350,
                       ),
                       Center(
@@ -104,8 +106,8 @@ class _RegisterState extends State<Register> {
                         borderRadius: BorderRadius.circular(25),
                         elevation: 3,
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.6,
-                          height: 70,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               color: Color(0xff52FF00)),
@@ -123,7 +125,7 @@ class _RegisterState extends State<Register> {
                                 child: Text(
                                   "Daftar",
                                   style: TextStyle(
-                                      fontSize: 32,
+                                      fontSize: 25,
                                       fontWeight: FontWeight.w700,
                                       color: Color(0xffffffff),
                                       shadows: <Shadow>[
@@ -138,6 +140,19 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
                       ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const Text(
+                              "Atau",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                      _signInButton()
                     ],
                   ),
                 )
@@ -153,6 +168,37 @@ class _RegisterState extends State<Register> {
     return TextField(
       decoration: InputDecoration(
           labelText: label, labelStyle: TextStyle(color: Color(0xff82916A))),
+    );
+  }
+
+  Widget _signInButton() {
+    return OutlinedButton(
+      onPressed: () {
+        signInWithGoogle().then((result) {
+          if (result != null) {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const MainPage();
+            }));
+          }
+        });
+      },
+      style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.all<Color>(Color.fromRGBO(255, 255, 255, 0)),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Image.asset(
+          'assets/images/google.png',
+          height: 25,
+          width: MediaQuery.of(context).size.width * 0.1,
+        ),
+      ),
     );
   }
 }

@@ -1,0 +1,54 @@
+[
+    {
+      "id": 1,
+      "name": "Suku Jawa",
+      "desc": "Suku Jawa (Aksara Jawoë : اورڠ اچيه) atau yang dalam bahasa Aceh yang ditulis dengan huruf tarian dibaca Ureuëng Acèh adalah nama sebuah suku penduduk asli yang mendiami wilayah pesisir dan sebagian pedalaman Provinsi Aceh, Indonesia.",
+      "tarian": "Tari Saman, Tari Seudati, Tari Ratoh Jaroe",
+      "pakaian": "Linto Baro dan Daro Baro",
+      "rumah": "Rumah Aceh",
+      "senjata": "Aceh-Chamik"
+    },
+    {
+      "id": 2,
+      "name": "Suku Madura",
+      "desc": "b",
+      "tarian": "c",
+      "pakaian": "d",
+      "rumah": "e",
+      "senjata": "f"
+    },
+    {
+      "id": 3,
+      "name": "Suku Melayu",
+      "desc": "b",
+      "tarian": "c",
+      "pakaian": "d",
+      "rumah": "e",
+      "senjata": "f"
+    },
+    {
+      "id": 4,
+      "name": "Suku Minangkabau",
+      "desc": "b",
+      "tarian": "c",
+      "pakaian": "d",
+      "rumah": "e",
+      "senjata": "f"
+    },
+    {
+      "id": 5,
+      "name": "Suku Nias",
+      "tarian": "c",
+      "pakaian": "d",
+      "rumah": "e",
+      "senjata": "f"
+    },
+    {
+        "id": 6,
+        "name": "Suku Lampung",
+        "tarian": "c",
+        "pakaian": "d",
+        "rumah": "e",
+        "senjata": "f"
+      }
+  ]

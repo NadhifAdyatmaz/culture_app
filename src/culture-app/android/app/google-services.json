@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "704403344258",
+    "project_id": "culture-app-ddae3",
+    "storage_bucket": "culture-app-ddae3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704403344258:android:612efa21ab4bab23905d9b",
+        "android_client_info": {
+          "package_name": "com.example.culture_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704403344258-fjca0f88t4jnekbhgkdmm8jioorrlhaf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.culture_app",
+            "certificate_hash": "e380f68b44c68baef8675dafc980f321873702c2"
+          }
+        },
+        {
+          "client_id": "704403344258-9154o3ij4i91a09jr9kvns0eqeh7lnfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUA64r5NnVDwsiDIi8LyqDTp_Lh4q86J8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704403344258-2su4krr0q7hd19c7kett4ikga844ppas.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

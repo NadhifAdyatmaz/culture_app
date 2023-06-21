@@ -1,4 +1,9 @@
+import 'package:culture_app/pages/login.dart';
 import 'package:flutter/material.dart';
+
+import '../screen/jaw_page.dart';
+import '../screen/sum_page.dart';
+import '../services/firebase_sign_in.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -33,23 +38,21 @@ class _MainPageState extends State<MainPage> {
                         color: Color(0xff00C82C),
                       ),
                     ),
-                    Container(
-                      width: 46,
-                      height: 46,
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(23),
-                          child: Image(image: AssetImage("images/profil.jpg"))),
-                    )
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(imageUrl),
+                      radius: 30,
+                      backgroundColor: Colors.transparent,
+                    ),
                   ],
                 ),
               ),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
-                      "Hello kamu,",
-                      style: TextStyle(fontSize: 20, color: Color(0xff52FF00)),
+                      name,
+                      style: TextStyle(fontSize: 23, color: Color(0xff52FF00)),
                     ),
                     Text(
                       "Temukan dan pelajari eksplorasi budaya barumu!",
@@ -71,11 +74,30 @@ class _MainPageState extends State<MainPage> {
                         child: Row(
                           children: <Widget>[
                             Flexible(
-                                flex: 5, child: mainButton("sum", "Sumatera")),
+                                flex: 5,
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Sum()));
+                                    },
+                                    child: mainButton("sum", "Sumatera"))),
                             Spacer(
                               flex: 1,
                             ),
-                            Flexible(flex: 5, child: mainButton("jaw", "Jawa")),
+                            Flexible(
+                                flex: 5,
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Jaw()));
+                                    },
+                                    child: mainButton("jaw", "Jawa"))),
                           ],
                         )),
                     Spacer(
@@ -131,24 +153,39 @@ class _MainPageState extends State<MainPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               Flexible(
-                                  flex: 1,
+                                child: InkWell(
+                                  onTap: () {
+                                    signOutGoogle();
+                                    Navigator.of(context).pushAndRemoveUntil(
+                                        MaterialPageRoute(builder: (context) {
+                                      return Login();
+                                    }), ModalRoute.withName('/'));
+                                  },
                                   child: Container(
                                     alignment: Alignment.center,
-                                    child: Image(
-                                      image:
-                                          AssetImage("images/keluar_akun.png"),
-                                      color: Colors.black,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Image(
+                                          image: AssetImage(
+                                              "assets/images/keluar_akun.png"),
+                                          color: Colors.black,
+                                          width: 40,
+                                        ),
+                                        const Text(
+                                          "Logout",
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xffCB8655),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  )),
-                              const Flexible(
-                                  flex: 10,
-                                  child: Text(
-                                    "keluar akun",
-                                    style: TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color(0xff52FF00)),
-                                  )),
+                                  ),
+                                ),
+                              ),
                             ],
                           )
                         ])),
@@ -193,7 +230,8 @@ class _MainPageState extends State<MainPage> {
                 flex: 7,
                 child: Container(
                   alignment: Alignment.center,
-                  child: Image(image: AssetImage("images/log-$gambar.png")),
+                  child:
+                      Image(image: AssetImage("assets/images/log-$gambar.png")),
                 )),
             Flexible(
                 flex: 3,

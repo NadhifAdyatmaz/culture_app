@@ -25,7 +25,7 @@ class GettingStart extends StatelessWidget {
                     color: Color(0xff00C82C),
                   ),
                 ),
-                Image(image: AssetImage("images/dash-1.png")),
+                Image(image: AssetImage("assets/images/dash-1.png")),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.9,
                   child: const Text(
