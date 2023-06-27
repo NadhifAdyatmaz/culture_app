@@ -10,9 +10,7 @@
 
 ## 1. Halaman Getting_start
 
-![sign in page](src/culture-app/assets/images/page_getstart1.png)
-
-![sign in page](src/culture-app/assets/images/page_getstart2.png)
+![sign in page](src/culture-app/assets/images/page_getstart1.png) ![sign in page](src/culture-app/assets/images/page_getstart2.png)
 
 Penjelasan :
 1. Terdapat Layout yang menggunakan Stateless Widget dengan tampilan yang membagi 4 baris pada 1 kolom.
