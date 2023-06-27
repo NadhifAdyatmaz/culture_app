@@ -259,7 +259,7 @@ class _JawState extends State<Jaw> {
                                                           )),
                                                     ],
                                                   )),
-                                                )
+                                                ),
                                               ],
                                             ),
                                           ))

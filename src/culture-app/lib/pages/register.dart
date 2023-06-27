@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import '../services/firebase_sign_in.dart';
@@ -29,6 +30,18 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    const colorizeColors = [
+      Colors.green,
+      Colors.blue,
+      Colors.yellow,
+      Colors.black,
+    ];
+
+    const colorizeTextStyle = TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Poppins-SemiBold',
+    );
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
@@ -40,12 +53,27 @@ class _RegisterState extends State<Register> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                const Text(
-                  "REGISTER",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff00C82C),
+                SizedBox(
+                  width: 300,
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      ColorizeAnimatedText(
+                        'REGISTER',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                      ColorizeAnimatedText(
+                        'DAFTAR',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                    ],
+                    isRepeatingAnimation: true,
+                    onTap: () {
+                      print("Tap Event");
+                    },
                   ),
                 ),
                 Container(

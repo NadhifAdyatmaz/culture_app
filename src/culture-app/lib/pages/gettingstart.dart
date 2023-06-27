@@ -1,12 +1,26 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-import 'register.dart';
+import 'login.dart';
 
 class GettingStart extends StatelessWidget {
   const GettingStart({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const colorizeColors = [
+      Colors.green,
+      Colors.blue,
+      Colors.yellow,
+      Colors.black,
+    ];
+
+    const colorizeTextStyle = TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Poppins-SemiBold',
+    );
+
     return Scaffold(
       body: Center(
         child: Container(
@@ -17,12 +31,27 @@ class GettingStart extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                const Text(
-                  "KEBUDAYAAN DAERAH",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff00C82C),
+                SizedBox(
+                  width: 300,
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      ColorizeAnimatedText(
+                        'KEBUDAYAAN DAERAH',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                      ColorizeAnimatedText(
+                        'INDONESIAN CULTURE',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                    ],
+                    isRepeatingAnimation: true,
+                    onTap: () {
+                      print("Tap Event");
+                    },
                   ),
                 ),
                 Image(image: AssetImage("assets/images/dash-1.png")),
@@ -55,7 +84,7 @@ class GettingStart extends StatelessWidget {
                           onTap: () {
                             Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const Register();
+                              return const Login();
                             }));
                           },
                           child: const Center(

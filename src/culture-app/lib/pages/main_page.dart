@@ -1,4 +1,5 @@
 import 'package:culture_app/pages/login.dart';
+import 'package:culture_app/pages/profil.dart';
 import 'package:flutter/material.dart';
 
 import '../screen/jaw_page.dart';
@@ -38,11 +39,18 @@ class _MainPageState extends State<MainPage> {
                         color: Color(0xff00C82C),
                       ),
                     ),
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(imageUrl),
-                      radius: 30,
-                      backgroundColor: Colors.transparent,
-                    ),
+                    InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ProfilePage()));
+                        },
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(imageUrl),
+                          radius: 30,
+                          backgroundColor: Colors.transparent,
+                        )),
                   ],
                 ),
               ),

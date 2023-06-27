@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "name": "Suku Melayu",
+      "name": "Suku Betawi",
       "desc": "b",
       "tarian": "c",
       "pakaian": "d",
@@ -28,7 +28,7 @@
     },
     {
       "id": 4,
-      "name": "Suku Minangkabau",
+      "name": "Suku Tengger",
       "desc": "b",
       "tarian": "c",
       "pakaian": "d",
@@ -37,7 +37,7 @@
     },
     {
       "id": 5,
-      "name": "Suku Nias",
+      "name": "Suku Bawean",
       "tarian": "c",
       "pakaian": "d",
       "rumah": "e",
@@ -45,7 +45,7 @@
     },
     {
         "id": 6,
-        "name": "Suku Lampung",
+        "name": "Suku Osing",
         "tarian": "c",
         "pakaian": "d",
         "rumah": "e",

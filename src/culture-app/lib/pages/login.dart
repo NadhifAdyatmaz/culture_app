@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import '../services/firebase_sign_in.dart';
@@ -14,6 +15,19 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    const colorizeColors = [
+      Colors.green,
+      Colors.blue,
+      Colors.yellow,
+      Colors.black,
+    ];
+
+    const colorizeTextStyle = TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Poppins-SemiBold',
+    );
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
@@ -25,12 +39,27 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                const Text(
-                  "LOGIN",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff00C82C),
+                SizedBox(
+                  width: 300,
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      ColorizeAnimatedText(
+                        'LOGIN',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                      ColorizeAnimatedText(
+                        'MASUK',
+                        textStyle: colorizeTextStyle,
+                        textAlign: TextAlign.center,
+                        colors: colorizeColors,
+                      ),
+                    ],
+                    isRepeatingAnimation: true,
+                    onTap: () {
+                      print("Tap Event");
+                    },
                   ),
                 ),
                 Column(
