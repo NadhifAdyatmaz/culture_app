@@ -35,7 +35,7 @@ Penjelasan :
 
 ## 3. Halaman Register
 
-![Register page](src/culture-app/assets/images/page_reg1.png)
+![Register page](src/culture-app/assets/images/page_reg1.png)  ![Register page](src/culture-app/assets/images/page_reg2.png)
 
 Penjelasan :
 1. Terdapat Layout yang menggunakan Statefull Widget dengan tampilan yang membagi 3 baris pada 1 kolom.
