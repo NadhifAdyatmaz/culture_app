@@ -1,12 +1,26 @@
-# PROJECT-MOBILE-2023
-# CULTURE-APP
+# PROJECT-MOBILE-2023 - CULTURE-APP
 
 ## Nama : Nadhif Adyatma Zain
 ## NIM : 2131750003
 
-## - - - - - - - - - - - - - - - - - -
+### - - - - - - - - - - - - - - - - - -
 ### Deskripsi : Aplikasi yang membantu mengenal lebih jauh tentang berbagai macam kebudayaan daerah yang ada di Indonesia, kebudayaan ini meliputi keanekaragaman suku adat, tarian adat, pakaian adat, rumah adat, lagu daerah, budaya, dan bahasa.
-## - - - - - - - - - - - - - - - - - -
+### - - - - - - - - - - - - - - - - - -
+
+## Cara Running Aplikasi
+### - - - - - - - - - - - - - - - - - -
+1. Klik button "AYO" pada halaman getting start kemudian akan berpindah ke halaman login.
+2. Lakukan Login dengan mengisi field inputan pada halaman login kemudian klik button "MASUK" untuk masuk ke halaman utama atau bisa login menggunakan akun google dengan mengklik logo "GOOGLE", jika BELUM memiliki akun bisa mengklik teks "DAFTAR" untuk melakukan register.
+3. Lakukan Register dengan mengisi field inputan pada halaman register kemudian klik button "DAFTAR" untuk masuk ke halaman utama, jika SUDAH memiliki akun bisa mengklik teks "DAFTAR" untuk melakukan register. atau bisa login menggunakan akun google dengan mengklik logo "GOOGLE"
+4. Setelah login/register berhasil akan menampilkan halaman utama.
+5. Pada halaman utama, Klik Avatar image untuk mengunjungi halaman profil.
+6. Pada halaman utama, Klik Button image (Pulau) untuk mengunjungi halaman detail Pulau.
+7. Pada halaman detail pulau, Klik card widget untuk mengexpand dan melihat isi detail.
+8. Pada halaman utama, Klik button "LOGOUT" untuk keluar akun dari halaman utama.
+
+### - - - - - - - - - - - - - - - - - -
+## Tampilan Aplikasi
+### - - - - - - - - - - - - - - - - - -
 
 ## 1. Halaman Getting_start
 
