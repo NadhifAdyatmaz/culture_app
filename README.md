@@ -10,7 +10,7 @@
 
 ## 1. Halaman Getting_start
 
-![sign in page](src/culture-app/assets/images/page_getstart1.png) ![sign in page](src/culture-app/assets/images/page_getstart2.png)
+![sign in page](src/culture-app/assets/images/page_getstart1.png)  ![sign in page](src/culture-app/assets/images/page_getstart2.png)
 
 Penjelasan :
 1. Terdapat Layout yang menggunakan Stateless Widget dengan tampilan yang membagi 4 baris pada 1 kolom.
@@ -22,9 +22,7 @@ Penjelasan :
 
 ## 2. Halaman Login
 
-![Log in page](src/culture-app/assets/images/page_log1.png)
-
-![Log in page](src/culture-app/assets/images/page_log2.png)
+![Log in page](src/culture-app/assets/images/page_log1.png)  ![Log in page](src/culture-app/assets/images/page_log2.png)
 
 Penjelasan :
 1. Terdapat Layout yang menggunakan Statefull Widget dengan tampilan yang membagi 3 baris pada 1 kolom.
@@ -73,9 +71,7 @@ Penjelasan :
 
 ## 6. Halaman Detail
 
-![Register page](src/culture-app/assets/images/page_sum1.png)
-
-![Register page](src/culture-app/assets/images/page_sum2.png)
+![Register page](src/culture-app/assets/images/page_sum1.png)  ![Register page](src/culture-app/assets/images/page_sum2.png)
 
 Penjelasan :
 1. Terdapat Layout yang menggunakan Statefull Widget dengan tampilan yang membagi 2 baris pada 1 kolom.
